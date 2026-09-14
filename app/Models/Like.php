@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Like extends Model
+{
+    protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // Like ini diberikan pada satu Chapter
+    public function chapter()
+    {
+        return $this->belongsTo(Chapter::class);
+    }
+}
